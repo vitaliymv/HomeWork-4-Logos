@@ -23,7 +23,7 @@ public class Factorial {
         int startNumber = scanData.nextInt();
 
         factorial(startNumber);
-
+        scanData.close();
     }
 
 }

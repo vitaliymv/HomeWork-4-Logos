@@ -30,6 +30,7 @@ public class Fibonachi {
 			} else {
 				arrayFIb[i] = arrayFIb[i - 1] + arrayFIb[i - 2];
 			}
+			
 			System.out.print(arrayFIb[i] + " ");
 			
 		}
