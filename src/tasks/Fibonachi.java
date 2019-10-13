@@ -6,34 +6,33 @@ public class Fibonachi {
 
 	private static void firstVersion(int count) {
 
-		long[] arrayFIb = new long[count + 2];
-		arrayFIb[0] = 0;
-		arrayFIb[1] = 1;
+		int sumTwoLastNumbers = 0;
+		int firstLastNumber = 0;
+		int secondLastNumber = 1;
 
-		for (int i = 2; i <= count + 1; i++) {
+		System.out.println("Numbers Fibonacci: ");
 
-			arrayFIb[i] = arrayFIb[i - 1] + arrayFIb[i - 2];
-
-			System.out.print(arrayFIb[i - 2] + " ");
+		for (int i = 0; i < count; i++) {
+			sumTwoLastNumbers = firstLastNumber + secondLastNumber;
+			firstLastNumber = secondLastNumber;
+			secondLastNumber = sumTwoLastNumbers;
+			System.out.print(firstLastNumber + " ");
 		}
-		System.out.println("");
 	}
 
 	private static void secondVersion(int count) {
 
 		long[] arrayFIb = new long[count + 2];
+        arrayFIb[0] = 0;
+        arrayFIb[1] = 1;
 
-		for (int i = 0; i <= count; i++) {
+        for (int i = 2; i <= count + 1; i++) {
 
-			if (i < 2) {
-				arrayFIb[i] = 1;
-			} else {
-				arrayFIb[i] = arrayFIb[i - 1] + arrayFIb[i - 2];
-			}
-			
-			System.out.print(arrayFIb[i] + " ");
-			
-		}
+            arrayFIb[i] = arrayFIb[i - 1] + arrayFIb[i - 2];
+
+            System.out.print(arrayFIb[i - 2] + " ");
+        }
+        System.out.println("");
 
 	}
 
@@ -41,13 +40,13 @@ public class Fibonachi {
 
 		System.out.print("Enter number: ");
 
-		Scanner scanData = new Scanner(System.in);
-		int count = scanData.nextInt();
+        Scanner scanData = new Scanner(System.in);
+        int count = scanData.nextInt();
 
-		firstVersion(count);
-		secondVersion(count);
-		
-		scanData.close();
+        firstVersion(count);
+        System.out.println("");
+        secondVersion(count);
+        scanData.close();
 	}
 
 }
