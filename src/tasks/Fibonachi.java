@@ -20,21 +20,17 @@ public class Fibonachi {
 		}
 	}
 
-	private static void secondVersion(int count) {
+	private static int secondVersion(int count) {
 
-		long[] arrayFIb = new long[count + 2];
-        arrayFIb[0] = 0;
-        arrayFIb[1] = 1;
-
-        for (int i = 2; i <= count + 1; i++) {
-
-            arrayFIb[i] = arrayFIb[i - 1] + arrayFIb[i - 2];
-
-            System.out.print(arrayFIb[i - 2] + " ");
+		if (count == 0) {
+            return 0;
+        } if (count == 1) {
+            return 1;
         }
-        System.out.println("");
+        return secondVersion(count - 1) + secondVersion(count - 2);
+    }
 
-	}
+	
 
 	public static void main(String[] args) {
 
@@ -45,7 +41,9 @@ public class Fibonachi {
 
         firstVersion(count);
         System.out.println("");
-        secondVersion(count);
+        for (int i = 1; i <= count; i++) {
+            System.out.print(secondVersion(i) + " ");
+        }
         scanData.close();
 	}
 

@@ -4,16 +4,14 @@ import java.util.Scanner;
 
 public class Factorial {
 	
-	private static void factorial(int startNumber) {
+	private static int factorial(int startNumber) {
 
-		long factorial = 1;
-
-		for (int i = 1; i <= startNumber; i++) {
-			factorial *= i;
-		}
-
-		System.out.print(startNumber + "! = " + factorial);
-	}
+        if (startNumber < 1) {
+            return 1;
+        } else {
+            return factorial(startNumber - 1) * startNumber;
+        }
+    }
 
     public static void main(String[] args) {
 
@@ -22,7 +20,7 @@ public class Factorial {
         Scanner scanData = new Scanner(System.in);
         int startNumber = scanData.nextInt();
 
-        factorial(startNumber);
+        System.out.println(factorial(startNumber) + " ");
         scanData.close();
     }
 
